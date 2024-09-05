@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해파리 키우기 게임</title>
+</head>
+<body>
+    <div id="game-container">
+        <svg id="aquarium-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+            <!-- 어항 테두리 -->
+            <rect x="10" y="10" width="280" height="380" fill="#87CEFA" stroke="#4682B4" stroke-width="10"/>
+            
+            <!-- 모래 -->
+            <rect x="10" y="350" width="280" height="40" fill="#F4A460"/>
+            
+            <!-- 수초 1 -->
+            <polygon points="30,350 50,280 70,350" fill="#008000"/>
+            
+            <!-- 수초 2 -->
+            <polygon points="200,350 220,270 240,350" fill="#006400"/>
+            
+            <!-- 돌 1 -->
+            <rect x="100" y="330" width="40" height="20" fill="#808080" rx="10" ry="10"/>
+            
+            <!-- 돌 2 -->
+            <rect x="180" y="340" width="30" height="15" fill="#A9A9A9" rx="7" ry="7"/>
+            
+            <!-- 공기 방울 -->
+            <circle cx="270" cy="300" r="5" fill="#FFFFFF"/>
+            <circle cx="275" cy="250" r="3" fill="#FFFFFF"/>
+            <circle cx="265" cy="200" r="4" fill="#FFFFFF"/>
+        </svg>
+        <svg id="jellyfish" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+            <rect x="12" y="0" width="8" height="4" fill="black" />
+            <rect x="8" y="4" width="16" height="4" fill="black" />
+            <rect x="4" y="8" width="24" height="8" fill="black" />
+            <rect x="8" y="16" width="4" height="8" fill="black" />
+            <rect x="14" y="16" width="4" height="12" fill="black" />
+            <rect x="20" y="16" width="4" height="8" fill="black" />
+            <rect x="8" y="24" width="4" height="4" fill="black" />
+            <rect x="20" y="24" width="4" height="4" fill="black" />
+            <rect x="10" y="12" width="4" height="4" fill="white" />
+            <rect x="18" y="12" width="4" height="4" fill="white" />
+        </svg>
+        <div id="food"></div>
+    </div>
+    <button id="feed-button" class="button">밥주기</button>
+    <button id="clean-button" class="button">청소하기</button>
+    <div id="info">
+        <p>일수: <span id="days">0</span></p>
+        <p>마지막 청소일: <span id="last-cleaned">0</span></p>
+        <p>오늘 밥 준 횟수: <span id="feeds-today">0</span>/3</p>
+    </div>
+</body>
+</html>
+
+
