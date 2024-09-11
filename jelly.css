@@ -1,9 +1,21 @@
+body {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#widget-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
 #game-container {
-    width: 300px;
-    height: 400px;
-    border: 2px solid #000;
+    width: 100%;
+    padding-bottom: 133.33%; /* 3:4 aspect ratio */
     position: relative;
     overflow: hidden;
+    border: 2px solid #000;
 }
 
 #aquarium-bg {
@@ -12,59 +24,89 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
 }
 
 #jellyfish {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 16.67%; /* 50px / 300px */
+    height: 12.5%; /* 50px / 400px */
     transition: all 3s ease;
-    z-index: 2;
     animation: float 4s infinite, swim 10s infinite;
 }
 
 #food {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 3.33%; /* 10px / 300px */
+    height: 2.5%; /* 10px / 400px */
     background-color: black;
     border-radius: 50%;
     display: none;
-    z-index: 3;
     transition: top 1s ease;
 }
 
+.button-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
 .button {
-    padding: 10px;
-    margin: 5px;
+    display: inline-block;
+    width: auto;
+    padding: 10px 20px;
     cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAeCAYAAACsYQl4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGXSURBVHgB7ZjhbYMwEIWfqv6PDkAHMB2ADkAHSCcInWA6AekEdAQ6QdIJSCZINwjhbE7YR4MMPXE4SdScLSWAyfG94zwWcEuB+8FaG+EjE5qO8JQQwYuHiEpyF7QqgofKKAmEPQ29OQnImZ6DSu+BshNXgI45opj8LE4qyFssdQdTNrE0XsIR4bHB+xBrZwM54otZ9d2kJvPDj3CX+QNZ0QfLzGF/uugXwDapqVkKXQOJk8dOzQRUH9CyxU1UoA6d+jZFyfb1r6ZwSI3Xg/jN3sZnj/VK/bvpKJ68f3tFOD3Rd7zcWSg/QRt/RJEBKhL60BfRSC0+/Zxt1P2JzB5VO/kuzGGLlPFjz5K44WoVuTUBUyofY3QAQnLe7h+kBj2FOcSmakPxvD0KyFUPNm1ABfm9dMy4rJVDxm+BLIAZvw2zzBnwGkb+fXyOfRGW5jXP/b3AOaB7p4KTgfIULaLnuIyq9Cj0PeP3pSVk/DaQ8dfRrRAtdHaD5LgMJv8yBTRFy1LZAz6wh9bIQUV4I5rIU88fwXEQFMwPv/IAAAAASUVORK5CYII=');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    font-family: "Jua", sans-serif;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.button:active {
+    opacity: 0.6;
+}
+
+#info {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    z-index: 10;
 }
 
 @keyframes float {
     0% { transform: translateY(0) rotate(0deg); }
-    25% { transform: translateY(-5px) rotate(5deg); }
+    25% { transform: translateY(-2%) rotate(5deg); }
     50% { transform: translateY(0) rotate(0deg); }
-    75% { transform: translateY(5px) rotate(-5deg); }
+    75% { transform: translateY(2%) rotate(-5deg); }
     100% { transform: translateY(0) rotate(0deg); }
 }
 
 @keyframes swim {
     0% { transform: translateX(0) translateY(0); }
-    25% { transform: translateX(10px) translateY(-10px); }
-    50% { transform: translateX(0) translateY(-20px); }
-    75% { transform: translateX(-10px) translateY(-10px); }
+    25% { transform: translateX(5%) translateY(-5%); }
+    50% { transform: translateX(0) translateY(-10%); }
+    75% { transform: translateX(-5%) translateY(-5%); }
     100% { transform: translateX(0) translateY(0); }
 }
 
-@keyframes heartFloat {
+@keyframes symbolFloat {
     0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(-12.5%); opacity: 0; }
 }
 
-.heart {
+.floating-symbol {
     position: absolute;
     font-size: 20px;
-    animation: heartFloat 2s forwards;
-    z-index: 4;
+    animation: symbolFloat 2s forwards;
+    z-index: 10;
 }
