@@ -28,8 +28,8 @@ body {
 
 #jellyfish {
     position: absolute;
-    width: 16.67%; /* 50px / 300px */
-    height: 12.5%; /* 50px / 400px */
+    width: 4%; /* 50px / 300px */
+    height: 3%; /* 50px / 400px */
     transition: all 3s ease;
     animation: float 4s infinite, swim 10s infinite;
 }
